@@ -1,0 +1,64 @@
+@import "normalize-css/normalize";
+@import "modularscale-sass/stylesheets/modular-scale";
+@import "typi/scss/typi";
+@import "themify/themify";
+
+@import "helpers/helpers";
+
+@import "variables/colors";
+@import "variables/typography";
+
+@import "base/base";
+
+@import "objects/typography";
+@import "components/slide";
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  h2, h3 {
+    display: inline-block;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+.centered .book {
+  display: inline-block;
+  position: relative;
+  max-width: vr(6.5, 1em);
+
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: drop-shadow(0 0 vr(0.5, 1em) rgba(0, 0, 0, 0.25));
+    content: '';
+  }
+
+  &:nth-child(1) {
+    transform: rotate(-10deg);
+  }
+
+  &:nth-child(2) {
+    transform: rotate(10deg);
+  }
+}
+
+.slide li {
+  margin-left: vr(0.25, 1em) + 1em;
+  list-style-type: square;
+}
+
+.dismissed {
+  opacity: 0.3;
+}

@@ -1,0 +1,61 @@
+// Grids. Split into 24 horizontal rows. 12 vertical rows
+.slide {
+  padding: percentage(1 / 24) percentage(1 / 24) percentage(1 / 12);
+}
+
+.slide--single-word {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide--image {
+  background-position: center center;
+  background-size: cover;
+}
+
+.slide--divider {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  h1 {
+    max-width: 80%;
+    text-align: right;
+    letter-spacing: -0.017em;
+  }
+}
+
+.slide--exercise {
+  .slide__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: linear-gradient(currentColor, currentColor) no-repeat;
+    background-size: 100% vr(0.125, 1em);
+    background-position: 0 2.0em;
+  }
+
+  .slide__time {
+    float: right;
+  }
+
+  .slide__content {
+    margin-top: vr(0.75, 1em);
+  }
+}
+
+.slide__header {
+  @include themify {
+    text-shadow: 0.03em 0 theme(background), -0.03em 0 theme(background), 0.1em 0 theme(background), -0.1em 0 theme(background), 0.2em 0 theme(background), -0.2em 0 theme(background);
+  }
+}
+
+// Themes
+@each $key, $value in $themes {
+  .#{$key} {
+    background: map-get($value, background);
+    color: map-get($value, color);
+  }
+}

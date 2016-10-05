@@ -1,0 +1,38 @@
+$ms-base: 1em;
+$ms-ratio: 1.25;
+
+$typi:(
+  base: (
+    null: 16px 1.4
+  ),
+  h1: (
+    null: ms(6) 0.95
+  ),
+  h2: (
+    null: ms(4) 0.9
+  ),
+  h3: (
+    null: ms(0) 1.2
+  ),
+  code: (
+    null: ms(-2) 1.3
+  )
+);
+
+// Nicer Ampersands
+@font-face {
+  font-family: 'Ampersand';
+  src: local('Baskerville-Italic'), local('GoudyOldStyleT-Italic'), local('Palatino-Italic'), local('Garamond-Italic');
+  unicode-range: U+26;
+}
+
+$typefaces: (
+  primary: (
+    stack: ('Ampersand', 'program'),
+    weights: (
+      normal: 400,
+      medium: 500,
+      bold: 700
+    )
+  ),
+);
